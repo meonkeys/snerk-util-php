@@ -1,4 +1,4 @@
-# This is Snerk
+# Snerk PHP Utilities [![Build Status](https://secure.travis-ci.org/meonkeys/snerk-util-php.png)](http://travis-ci.org/meonkeys/snerk-util-php)
 
 I don't have a great reason for calling this "snerk-util". "generic-util" would
 be more accurate, but not as fun.

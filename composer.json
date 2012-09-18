@@ -1,6 +1,7 @@
 {
     "name": "meonkeys/snerk-util-php",
-    "description": "Various PHP utilities",
+    "description": "Snerk PHP utilities",
+    "license": "MIT",
     "authors": [
         {
             "name": "Adam Monsen",

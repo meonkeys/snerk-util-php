@@ -1,0 +1,13 @@
+{
+    "name": "meonkeys/snerk-util-php",
+    "description": "Various PHP utilities",
+    "authors": [
+        {
+            "name": "Adam Monsen",
+            "email": "haircut@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}

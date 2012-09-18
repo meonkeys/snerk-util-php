@@ -3,9 +3,11 @@
 # Copyright (C) 2012 Adam Monsen <haircut@gmail.com>
 # License: MIT License. See end of script for more license information.
 
-namespace TwoBulb;
+namespace TwoBulb\Tests;
 
-require_once 'ArrayUtil.php';
+require_once __DIR__ . '/../ArrayUtil.php';
+
+use TwoBulb\ArrayUtil;
 
 class ArrayUtilTest extends \PHPUnit_Framework_TestCase {
 
@@ -47,6 +49,38 @@ class ArrayUtilTest extends \PHPUnit_Framework_TestCase {
   public function testWonkyIndexesDoNotMatter() {
     $a = ArrayUtil::array_move_item(array(0 => 'a', 40 => 'b', 50 => 'c'), 'a', 1);
     $this->assertEquals(array('b', 'a', 'c'), $a);
+  }
+
+  /**
+   * @expectedException InvalidArgumentException
+   * @expectedExceptionMessage $arr must be nonempty
+   */
+  public function testEmptyArrayThrowsException() {
+    ArrayUtil::array_move_item(array(), 'c', 0);
+  }
+
+  /**
+   * @expectedException InvalidArgumentException
+   * @expectedExceptionMessage $arr must contain item
+   */
+  public function testItemNotInArrThrowsException() {
+    ArrayUtil::array_move_item(array('a'), 'b', 0);
+  }
+
+  /**
+   * @expectedException InvalidArgumentException
+   * @expectedExceptionMessage $item must not be null
+   */
+  public function testNullItemThrowsException() {
+    ArrayUtil::array_move_item(array('a', NULL, 'b'), NULL, 0);
+  }
+
+  /**
+   * @expectedException InvalidArgumentException
+   * @expectedExceptionMessage $position must be a nonnegative integer
+   */
+  public function testPositionNotIntegerThrowsException() {
+    ArrayUtil::array_move_item(array('a'), 'a', 'a');
   }
 
 }

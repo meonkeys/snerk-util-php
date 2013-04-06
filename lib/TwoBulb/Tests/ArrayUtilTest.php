@@ -36,7 +36,7 @@ class ArrayUtilTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals(array('b', 'a', 'c'), $a);
   }
 
-  public function testPromoteMiddlToFirst() {
+  public function testPromoteMiddleToFirst() {
     $a = ArrayUtil::array_move_item(array('a', 'b', 'c'), 'b', 0);
     $this->assertEquals(array('b', 'a', 'c'), $a);
   }
